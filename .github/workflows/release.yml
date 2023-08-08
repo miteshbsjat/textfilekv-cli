@@ -26,7 +26,7 @@ jobs:
           go-version: '1.19'
       
       - name: Run unit tests
-        run: make test-coverage
+        run: make test
 
       - name: Build textfilekv-cli Binaries
         run: |
