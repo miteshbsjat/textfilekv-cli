@@ -19,16 +19,19 @@ Each line represent a new record. This file can be even edited by hand when not 
 ### Installing
 
 #### Linux
-* Download From [Release](https://github.com/miteshbsjat/textfilekv-cli/releases)
+* Download From [Release](https://github.com/miteshbsjat/textfilekv-cli/releases), e.g.
+[textfilekv-cli v0.0.9 Linux AMD64](wget https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz)
 ```bash
 cd /tmp
-```
-* Extract the achieve
-```bash
-tar -zxvf textfilekv-cli-v0.0.4-linux-amd64.tar.gz 
+wget https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz
 ```
 
-* Install the binary in a directory in `$PATH`
+* Extract the achieve
+```bash
+tar -zxvf textfilekv-cli-v0.0.9-linux-amd64.tar.gz 
+```
+
+* Install the binary in a directory in your `$PATH`
 ```bash
 install -s linux-amd64/textfilekv-cli ~/bin/
 ```
@@ -41,6 +44,9 @@ which textfilekv-cli
 
 
 ### Alias Setting and Shell Command Auto-Completion 
+
+* Using `/tmp/demo.txt` for the demo, you can use any number of files for separate KV stores.
+
 ```bash
 alias tkv-demo="textfilekv-cli -f /tmp/demo.txt"
 ```
