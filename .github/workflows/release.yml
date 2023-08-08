@@ -32,14 +32,16 @@ jobs:
         run: |
           make build-cross
           make dist checksum VERSION="${{ github.ref_name }}"
+          rm -rf _dist/linux-* _dist/darwin-* *.tar.gz.sha256
 
-      - name: Upload Binaries
-        uses: bacongobbler/azure-blob-storage-upload@50f7d898b7697e864130ea04c303ca38b5751c50 # pin@3.0.0
+      - name: Create Release
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
         env:
-          AZURE_STORAGE_CONNECTION_STRING: "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
-          AZURE_STORAGE_CONTAINER_NAME: "${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          source_dir: _dist
-          container_name: ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}
-          connection_string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
-          extra_args: '--pattern textfile-kv-*'
+          tag_name: ${{ github.ref }}
+          name: Release ${{ github.ref_name }}
+          draft: true
+          prerelease: false
+          generate_release_notes: true
+          files: '_dist/*'
