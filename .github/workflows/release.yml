@@ -3,9 +3,9 @@ on:
   create:
     tags:
       - v*
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
 
 # Note the only differences between release and canary-release jobs are:
 # - only canary passes --overwrite flag
@@ -32,3 +32,14 @@ jobs:
         run: |
           make build-cross
           make dist checksum VERSION="${{ github.ref_name }}"
+
+      - name: Upload Binaries
+        uses: bacongobbler/azure-blob-storage-upload@50f7d898b7697e864130ea04c303ca38b5751c50 # pin@3.0.0
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+          AZURE_STORAGE_CONTAINER_NAME: "${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}"
+        with:
+          source_dir: _dist
+          container_name: ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}
+          connection_string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+          extra_args: '--pattern textfile-kv-*'
