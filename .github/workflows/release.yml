@@ -35,7 +35,7 @@ jobs:
         run: |
           make build-cross
           make dist checksum VERSION="${{ github.ref_name }}"
-          rm -rf _dist/linux-* _dist/darwin-* *.tar.gz.sha256
+          rm -rf _dist/linux-* _dist/darwin-* _dist/*.sha256
 
       - name: Create Release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
