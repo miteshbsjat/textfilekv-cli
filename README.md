@@ -79,3 +79,13 @@ tkv-demo get -k home_dir
 /home/mitesh
 ```
  ----
+
+ ## Acknowledgement
+
+ I would like to extend my heartfelt gratitude to my family and friends for their unwavering support and encouragement throughout this endeavor. Your belief in me has been a constant source of inspiration, and I am truly grateful for the moments we've shared.
+
+To my teachers, thank you for your dedication to my education and for fostering an environment of learning that has shaped my skills and perspective. Your guidance has been instrumental in my growth.
+
+A special note of appreciation goes to P. A. Venkatesh, Nilesh Deshmukh, and Puneet Vyas for their invaluable contribution to testing and refining the code repository. Your insights and feedback have played a crucial role in enhancing the quality and functionality of the project.
+
+Your collective support, encouragement, and insights have been instrumental in making this project a reality. Thank you for being a part of my journey.
