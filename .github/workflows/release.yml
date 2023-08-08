@@ -42,17 +42,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # tag_name: ${{ github.ref }}
           name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
           generate_release_notes: true
           files: '_dist/*'
-
-      # - name: Upload build artifacts
-      #   uses: skx/github-action-publish-binaries@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     releaseId: ${{ github.ref_name }} 
-      #     args: _dist/*

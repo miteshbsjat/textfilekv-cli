@@ -18,6 +18,31 @@ Each line represent a new record. This file can be even edited by hand when not 
 
 ### Installing
 
+#### MacOS M1/M2
+* Download From [Release](https://github.com/miteshbsjat/textfilekv-cli/releases), e.g.
+[textfilekv-cli v0.0.9 Darwin ARM64](https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-darwin-arm64.tar.gz)
+```bash
+cd /tmp
+wget https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-darwin-arm64.tar.gz
+```
+
+* Extract the achieve
+```bash
+tar -zxvf textfilekv-cli-v0.0.9-darwin-arm64.tar.gz 
+```
+
+* Install the binary in a directory in your `$PATH`
+```bash
+sudo install -s darwin-arm64/textfilekv-cli /opt/homebrew/bin
+```
+
+* Verify the installation
+```bash
+which textfilekv-cli 
+/opt/homebrew/bin/textfilekv-cli
+```
+
+
 #### Linux
 * Download From [Release](https://github.com/miteshbsjat/textfilekv-cli/releases), e.g.
 [textfilekv-cli v0.0.9 Linux AMD64](https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz)
@@ -92,6 +117,6 @@ tkv-demo get -k home_dir
 
 To my teachers, thank you for your dedication to my education and for fostering an environment of learning that has shaped my skills and perspective. Your guidance has been instrumental in my growth.
 
-A special note of appreciation goes to P. A. Venkatesh, Nilesh Deshmukh, and Puneet Vyas for their invaluable contribution to testing and refining the code repository. Your insights and feedback have played a crucial role in enhancing the quality and functionality of the project.
+A special note of appreciation goes to P. A. Venkatesh, Nilesh Deshmukh, Tara and Puneet Vyas for their invaluable contribution to testing and refining the code repository. Your insights and feedback have played a crucial role in enhancing the quality and functionality of the project.
 
 Your collective support, encouragement, and insights have been instrumental in making this project a reality. Thank you for being a part of my journey.
