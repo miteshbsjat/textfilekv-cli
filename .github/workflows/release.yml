@@ -38,11 +38,11 @@ jobs:
           rm -rf _dist/linux-* _dist/darwin-* _dist/*.sha256
 
       - name: Create Release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           draft: true
           prerelease: false
