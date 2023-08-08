@@ -37,14 +37,21 @@ jobs:
           make dist checksum VERSION="${{ github.ref_name }}"
           rm -rf _dist/linux-* _dist/darwin-* _dist/*.sha256
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+      # - name: Create Release
+      #   uses: softprops/action-gh-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ github.ref_name }}
+      #     name: Release ${{ github.ref_name }}
+      #     draft: true
+      #     prerelease: false
+      #     generate_release_notes: true
+      #     files: '_dist/*'
+
+      - name: Upload build artifacts
+        uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          draft: true
-          prerelease: false
-          generate_release_notes: true
-          files: '_dist/*'
+          args: _dist/*
