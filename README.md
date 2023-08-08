@@ -20,7 +20,7 @@ Each line represent a new record. This file can be even edited by hand when not 
 
 #### Linux
 * Download From [Release](https://github.com/miteshbsjat/textfilekv-cli/releases), e.g.
-[textfilekv-cli v0.0.9 Linux AMD64](wget https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz)
+[textfilekv-cli v0.0.9 Linux AMD64](https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz)
 ```bash
 cd /tmp
 wget https://github.com/miteshbsjat/textfilekv-cli/releases/download/v0.0.9/textfilekv-cli-v0.0.9-linux-amd64.tar.gz
