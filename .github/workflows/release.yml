@@ -7,6 +7,9 @@ on:
   #   branches:
   #     - master
 
+permissions:
+  contents: write
+
 # Note the only differences between release and canary-release jobs are:
 # - only canary passes --overwrite flag
 # - the VERSION make variable passed to 'make dist checksum' is expected to
